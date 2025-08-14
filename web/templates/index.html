@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Anime ro'yxati</title>
+</head>
+<body>
+    <h1>Anime ro'yxati</h1>
+    {% for anime in anime_list %}
+        <div style="border:1px solid #ccc;margin:10px;padding:10px;">
+            <img src="{{ anime['img_url'] }}" width="200">
+            <h2>{{ anime['title_uz'] }}</h2>
+            <p>{{ anime['desc_uz'] }}</p>
+            <a href="{{ url_for('anime_detail', anime_id=anime['id']) }}">site orqali ko‘rish</a>
+            <a href="https://t.me/YOUR_BOT?start={{ anime['id'] }}">bot orqali ko‘rish</a>
+        </div>
+    {% endfor %}
+</body>
+</html>
