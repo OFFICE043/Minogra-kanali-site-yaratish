@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ anime['title_uz'] }}</title>
+</head>
+<body>
+    <h1>{{ anime['title_uz'] }}</h1>
+    <img src="{{ anime['img_url'] }}" width="300">
+    <p>{{ anime['desc_uz'] }}</p>
+    <h3>Seriyalari:</h3>
+    <ul>
+      {% for s in anime['series'] %}
+        <li>
+          <a href="{{ s['video_url'] }}" target="_blank"> {{ s['number'] }}-seriya </a>
+        </li>
+      {% endfor %}
+    </ul>
+    <a href="https://t.me/YOUR_BOT?start={{ anime['id'] }}">bot orqali ko‘rish</a>
+</body>
+</html>
